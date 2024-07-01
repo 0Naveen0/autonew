@@ -1,0 +1,32 @@
+to export database at bash console
+
+cd
+mysqldump -u navtek -h navtek.mysql.pythonanywhere-services.com --set-gtid-purged=OFF --no-tablespaces --column-statistics=0 'navtek$nav_db'  > db-backup.sql;
+
+to import database at mysql
+
+source database_file;
+
+
+or
+
+mysql -u navtek -h navtek.mysql.pythonanywhere-services.com 'navtek$nav_db'  < db-backup.sql
+
+#Mysql database settings
+#use pip install mysqlclient first then in setting file
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'navtek$nav_db',
+        'USER': 'navtek',
+        'PASSWORD': '9934680440@ybl',
+        'HOST':'navtek.mysql.pythonanywhere-services.com',
+        'PORT':'3306',
+    }
+
+#sqlite3 settings default
+  'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    } 
+
+

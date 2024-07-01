@@ -1,0 +1,19 @@
+D:\SOFTWARE\project\myworld\Scripts\activate.bat
+
+django-admin startproject django_projectname
+
+django-admin stprojectapp django_appname
+
+cd portfolio
+py manage.py collectstatic
+py manage.py runserver
+
+py manage.py makemigrations
+
+py manage.py migrate
+
+py manage.py shell
+
+127.0.0.1:8000
+
+https://studygyaan.com/django/django-ajax-crud-tutorial-with-example-part-1-create-and-read#google_vignette

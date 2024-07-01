@@ -1,0 +1,65 @@
+﻿{% extends "base.html" %}
+{%load static %}
+
+
+
+{% block title %}
+    My Portfolio
+{% endblock %}
+
+{% block content %}
+      
+     <!--////////////////START INTRO SECTION/////////////////////////////-->
+
+<section id="intro" class="intro-section bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 "> 
+Colors Section
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Color</th>
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+   
+  
+{% for color in colors %}
+<tr>
+      <th scope="row">{{color.id}}</th>
+      <td>{{color.name}}</td>
+      <td><a class="btn btn-sm btn-rounded" href="#{{color.id}}">Edit</a>
+      <a class="btn btn-sm btn-rounded" href="#{{color.id}}">Del</a></td>
+     
+    </tr>
+
+{% endfor %}
+</tbody>
+</table>
+
+
+	  </div>
+      
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+     <!--////////////////END INTRO SECTION/////////////////////////////-->
+	
+
+{% endblock %}
