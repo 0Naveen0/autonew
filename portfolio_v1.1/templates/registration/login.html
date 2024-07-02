@@ -1,0 +1,15 @@
+﻿{% extends "base.html" %}
+{%load static %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+
+{% block content %}
+<form method="post">
+{% csrf_token %}
+{{form}}
+<button type="submit" class="btn btn-sm btn-success">Log In</button>
+</form>
+{% endblock %}
