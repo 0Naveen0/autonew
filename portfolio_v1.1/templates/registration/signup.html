@@ -7,9 +7,49 @@ Sign Up
 
 
 {% block content %}
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+
+
+<h1>Registration</h1>
+
 <form method="post">
 {% csrf_token %}
-{{form}}
+<div class="mb-3">
+    <label for="username" class="form-label">User Name</label>
+    {{form.username}}
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    {{form.email}}
+  </div>
+   <div class="mb-3">
+    <label for="password1" class="form-label">Password</label>
+    {{form.password1}}
+  </div>
+   <div class="mb-3">
+    <label for="password2" class="form-label">Repeat Password</label>
+    {{form.password2}}
+  </div>
+  
+  
+
+
+{% if form.errors or form.non_field_errors %}
+	<div class="text-danger">
+		{% for field in form %}
+			{{field.errors}}
+		{% endfor%}
+		{{form.non_field_errors}}
+	
+	</div>
+{% endif %}
+
 <button type="submit" class="btn btn-sm btn-success">Sign Up</button>
+<a href="{% url 'login' %}" class="btn btn-sm btn-success">Log In</a>
 </form>
+</div>
+</div>
+</div>
 {% endblock %}
