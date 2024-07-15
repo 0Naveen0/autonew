@@ -1,0 +1,257 @@
+//import App from "./App";
+ // <App />
+
+<div className="dropdown">
+  <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a className="dropdown-item" href="#">Action</a></li>
+    <li><a className="dropdown-item" href="#">Another action</a></li>
+    <li><a className="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
+// <div className="btn-group">
+  // <button className="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    // Small button
+  // </button>
+  // <ul className="dropdown-menu">
+    // <li><a className="dropdown-item" href="#">Action</a></li>
+    // <li><a className="dropdown-item" href="#">Another action</a></li>
+    // <li><a className="dropdown-item" href="#">Something else here</a></li>
+    // <li><hr className="dropdown-divider" /></li>
+    // <li><a className="dropdown-item" href="#">Separated link</a></li>
+  // </ul>
+// </div>
+//import Home from "./Home";
+/*   <Home />*/
+import "./styles.css"; <Footer /> 	<email></email>
+
+
+<div className="row cyan noprint">
+                      
+                            
+    
+        <div className="col-sm-3">Visitors&nbsp;:&nbsp;{pageData.visitorsCount}</div>
+        <div className="col-sm-6 ">
+	        <strong>
+		        <small>
+			        &nbsp;&copy;&nbsp; Apoorva&nbsp;Traders- {pageData.currentYear},&nbsp; Developed by :{pageData.developerEmail}
+			    </small>
+		    </strong>
+	    </div>
+        <div className="col-sm-3">Updated on:{pageData.lastUpdate}</div>
+    </div>
+	
+	<address></address>
+	
+	
+	
+	
+	
+	<div className="row noprint" style= "background:cyan;">
+        <div className="col-sm-3 col-xs-3">
+		
+            <p className="">
+                <strong>Contact Us</strong><br/>
+                
+                    Anil Kumar<br/>
+                    Rambagh,Banglagarh<br/>
+                    Darbhanga<br/>
+
+                    Call Me - {pageData.primaryContact},<br/>{pageData.secondaryContact}
+                    
+                        Email:-{pageData.companyEmail}
+                    
+                
+            </p>
+			
+        </div>   //col 1 end
+		
+        <div className="col-sm-3 col-xs-3">
+            <p className=""></p>
+        </div> //col 2 end
+		
+        <div className="col-sm-3 col-xs-3">
+            <strong>Useful Links</strong><br/>
+        </div> //col 3 end
+		
+        <div className="col-sm-3 col-xs-3">
+            <ul className="nav nav-tabs nav-tabs">
+
+                <li></li>
+            </ul>
+	    </div> // col 4 end
+    </div>   // row 1 end
+	
+	let pageData = {
+	imgUrl : "/assets/images/usersImage/28.jpg",
+	userName:"Naveen",
+};
+    <ChangePassword/>
+	<Route exact path='/about' element={< AboutUs />}></Route> 
+                <Route exact path='/ContactUs' element={< ContactUs />}></Route> 
+				 <Layout>
+                <Route exact path='/home' element={< Home />}></Route> 
+                
+			</Layout>
+			
+			
+			
+			
+			
+			https://leegality.in/WxKWEB 
+VA0253093220
+
+VA0253099488
+
+7667756730
+
+
+VA0253107435  ANIL
+
+Q014458555 
+
+994869900313
+
+
+Database host address:navtek.mysql.pythonanywhere-services.com
+Username:navtek
+9934680440@ybl
+3306
+
+#  'default': {
+   #     'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+#    }  
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'navtek$nav_db',
+        'USER': 'navtek',
+        'PASSWORD': '9934680440@ybl',
+        'HOST':'navtek.mysql.pythonanywhere-services.com',
+
+    }
+
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nav_db',
+        'USER': 'navtek',
+        'PASSWORD': '9934680440@ybl',
+        'HOST':'navtek.mysql.pythonanywhere-services.com',
+        'PORT':'3306',
+    }
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'navtek$nav_db',
+        'USER': 'navtek',
+        'PASSWORD': '9934680440@ybl',
+        'HOST':'navtek.mysql.pythonanywhere-services.com',
+        'PORT':'3306',
+    }
+	
+	'Test': {
+        'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+    },
+HELLO_WORLD = """<html>
+<head>
+    <title>PythonAnywhere hosted web application</title>
+</head>
+<body>
+<h1>Hello, World!</h1>
+<p>
+    This is the default welcome page for a
+    <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>
+    hosted web application.
+</p>
+<p>
+    Find out more about how to configure your own web application
+    by visiting the <a href="https://www.pythonanywhere.com/web_app_setup/">web app setup</a> page
+</p>
+</body>
+</html>"""
+
+
+def application(environ, start_response):
+    if environ.get('PATH_INFO') == '/':
+        status = '200 OK'
+        content = HELLO_WORLD
+    else:
+        status = '404 NOT FOUND'
+        content = 'Page not found.'
+    response_headers = [('Content-Type', 'text/html'), ('Content-Length', str(len(content)))]
+    start_response(status, response_headers)
+    yield content.encode('utf8')
+
+
+cd
+mysqldump -u navtek -h navtek.mysql.pythonanywhere-services.com --set-gtid-purged=OFF --no-tablespaces --column-statistics=0 'navtek$nav_db'  > db-backup.sql
+
+
+
+
+select s1.machine_id,s1.process_id,(s2.timestamp-s1.timestamp ) as t_stamp from
+(SELECT s.machine_id,s.process_id,s.activity_type as start,s.timestamp from Activity as s
+where s.activity_type ='start') s1
+join (SELECT s.machine_id,s.process_id,s.activity_type as end,s.timestamp from Activity as s
+where s.activity_type ='end') s2
+using(machine_id);
+
+select s1.machine_id,s1.process_id,(s2.timestamp-s1.timestamp ) as t_stamp from
+(SELECT s.machine_id,s.process_id,s.activity_type as start,s.timestamp from Activity as s
+where s.activity_type ='start') s1
+inner join (SELECT s.machine_id,s.process_id,s.activity_type as end,s.timestamp from Activity as s
+where s.activity_type ='end') s2
+using(machine_id);
+
+
+
+SELECT q1.query_name ,ROUND(AVG(q1.rating /q1.position ),2) AS quality,ROUND((SELECT COUNT(q.rating) FROM Queries as q WHERE q.rating<3)*100/COUNT(q1.query_name),2) AS poor_query_percentage  
+FROM Queries as q1
+GROUP BY q1.query_name;
+
+{"headers":{"Queries":["query_name","result","position","rating"]},
+"rows":{"Queries":[["lfdxfi","qduxwfnfozvsr",2,5],
+                   ["meayln","prepggxrpnrvy",1,1],
+				   ["phqghu","wcysyycqpevik",1,2],
+				   ["rcvscx","mznimkkasvwsr",1,4],
+				   ["lfdxfi","kycxfxtlsgyps",2,2]]}}
+				   
+				   -- Write your PostgreSQL query statement below
+SELECT q1.query_name ,ROUND(AVG(q1.rating /q1.position ),2) AS quality,COALESCE(ROUND(q2.min_cnt*100/COUNT(q1.rating),2),0) AS poor_query_percentage FROM 
+(SELECT q.query_name,q.position,q.rating  FROM Queries q) as q1
+LEFT JOIN 
+(SELECT query_name ,COALESCE(COUNT(rating),0) as min_cnt FROM Queries WHERE rating<3 GROUP BY query_name) as q2
+using(query_name)
+group by query_name, min_cnt
+having query_name IS NOT NULL;
+
+
+
+
+SELECT UCASE(E.First_Name) AS NAME,A.AttendenceDate AS ATTENDENCE_DATE,A.InTime AS IN_TIME,A.OutTime AS OUT_TIME,TIMEDIFF(A.OutTime,A.InTime) AS HOURS FROM `employee` AS E LEFT JOIN `employee_attendance` AS EA ON E.Emp_Id=EA.Emp_Id LEFT JOIN `attendance` A ON EA.Attendance_Id=A.Attendance_Id WHERE MONTH(A.AttendenceDate)=4;
+
+
+
+SELECT (L.Leave_End_Date-L.Leave_Start_Date) AS Taken_Leave,L.Approved_Leave,(Total_Leave-L.Approved_Leave) AS Absent FROM `leavee` AS L
+RIGHT JOIN `employee` AS E
+ON E.Emp_Id=L.Emp_Id;
+
+
+
+
+
+
+SELECT E.Emp_Id,ucase(E.First_Name) As Name,CASE WHEN ((L.Leave_End_Date-L.Leave_Start_Date) IS NULL) THEN 0 ELSE (L.Leave_End_Date-L.Leave_Start_Date) END AS Taken_Leave,CASE WHEN ((L.Approved_Leave) IS NULL) THEN 0 ELSE (L.Approved_Leave)END AS Approved,case when (((L.Leave_End_Date-L.Leave_Start_Date)-(L.Approved_Leave)) is null) then 0 else ((L.Leave_End_Date-L.Leave_Start_Date)-(L.Approved_Leave)) end AS Absent FROM `leavee` AS L RIGHT JOIN `employee` AS E ON E.Emp_Id=L.Emp_Id;
+
+SELECT E.Emp_Id,ucase(E.First_Name) As Name,Month(L.Leave_Start_Date) AS Month,CASE WHEN ((L.Leave_End_Date-L.Leave_Start_Date) IS NULL) THEN 0 ELSE (L.Leave_End_Date-L.Leave_Start_Date) END AS Taken_Leave,CASE WHEN ((L.Approved_Leave) IS NULL) THEN 0 ELSE (L.Approved_Leave)END AS Approved,case when (((L.Leave_End_Date-L.Leave_Start_Date)-(L.Approved_Leave)) is null) then 0 else ((L.Leave_End_Date-L.Leave_Start_Date)-(L.Approved_Leave)) end AS Absent FROM `leavee` AS L RIGHT JOIN `employee` AS E ON E.Emp_Id=L.Emp_Id GROUP by E.Emp_Id,Month;
+
+
+

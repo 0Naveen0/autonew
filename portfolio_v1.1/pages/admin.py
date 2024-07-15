@@ -5,12 +5,14 @@ from pages.models import Colors,Salesman,Company,Hypothecation,Taxation,Remark,B
 
 class ColorsAdmin(admin.ModelAdmin):
     list_display=("id","name",)
+    verbose_name_plural = "colors"
     
 class SalesmanAdmin(admin.ModelAdmin):
     list_display =("id","salesman_fname","salesman_lname")
     
 class CompanyAdmin(admin.ModelAdmin):
     list_display=("id","company_name","company_primary_contact","company_secondary_contact",)
+    verbose_name_plural = "Company"
     
 class HypothecationAdmin(admin.ModelAdmin):
     list_display = ("id","hypothecation","hypothecationfullname",)

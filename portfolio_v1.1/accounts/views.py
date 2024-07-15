@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth import authenticate,login
 from django.contrib import messages
+from accounts.models import CustomUser
 
 # Create your views here.
 class SignUpView(CreateView):
@@ -17,10 +18,26 @@ def LogInView(request):
     if request.method == "POST":        
         username = request.POST['username']
         if User.objects.filter(username=username).exists():
+            user = User.objects.filter(username=username).values().first()
+            #print(user['id'])
+            customuser=""
+            #print(CustomUser.objects.get(user=user['id']))
+            if  CustomUser.objects.filter(user=user['id']).count():
+                customuser = CustomUser.objects.get(user=user['id'])
+                print(customuser.company.id)
+                print(customuser.company.company_name)
+                print(customuser.user.id)
+                print(customuser.user.username)
+                print(customuser.user.email)           
             password = request.POST['password']
-            user = authenticate(request,username=username, password=password)
-            if user is not None:
-                login(request,user)
+            users = authenticate(request,username=username, password=password)
+            if users is not None:
+                login(request,users)
+                #login(request,customuser)
+                if customuser:
+                    request.session['companyid'] = customuser.company.id
+                else:
+                    request.session['companyid'] = False
                 return redirect("home")
             else:
                  messages.info(request, "Invalid Credentials.")

@@ -21,8 +21,7 @@ class Company(models.Model):
     company_bank_account_no =models.CharField(max_length=25)    
     company_logo =models.CharField(max_length=55)
     company_created_on =models.DateField()
-    company_active =models.BooleanField(default=False) 
-    
+    company_active =models.BooleanField(default=False)    
     def __self__(self):
         return f"{self.company_name}"
 
@@ -85,6 +84,19 @@ class Branch(models.Model):
     
     def __self__(self):
         return f"{self.branch_name}"
+        
+class Customer(models.Model):
+        customer_first_name=models.CharField(max_length=55)
+        customer_last_name =models.CharField(max_length=55)
+        customer_father_name =models.CharField(max_length=55)
+        customer_gst =models.CharField(max_length=55,default="NA")        
+        customer_contact =models.CharField(max_length=10,unique=True)
+        customer_email =models.EmailField(max_length=65)
+        customer_address_l =models.CharField(max_length=65)
+        customer_address_2 =models.CharField(max_length=65)
+        customer_pin =models.CharField(max_length=6)
+        customer_company =models.ForeignKey(Company,on_delete=models.CASCADE)
+        
     
     
     
