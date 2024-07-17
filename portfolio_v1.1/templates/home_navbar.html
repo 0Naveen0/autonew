@@ -1,0 +1,74 @@
+﻿{%load static %}
+
+    <nav class="navbar navbar-expand-lg menu ">
+      <div class="container">
+        <a class="navbar-brand animate__animated animate__swing" href="#"><img src={% static 'images/logo_small.png'%} alt="logo image"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'projects_home'%}">Portfolio</a>
+            </li><li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            
+          </ul>
+          <button class="rounded-pill btn-rounded">
+		  
+            +91-{% if company %}{{company.company_primary_contact}}{% else %}123456789
+			{% endif %}
+            <span>
+              <i class="fas fa-phone-alt"></i>
+            </span>
+          </button>
+		  
+			<div>
+			<div class="row ms-2">
+			    <div class="col-sm-12 text-center">{% if company %}{{company.company_name|title}}{% else %}Anonymous
+			{% endif %}</div></div>
+			<div class="row ms-2"><div class="col-sm-12 text-center">{% if user.is_authenticated %}Hello,{{user.username|title}}{% else %}Guest
+			{% endif %}</div></div></div>
+			<button class="btn btn-primary ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><span>
+              <i class="fa-solid fa-bars"></i>
+            </span></button>
+        </div>
+        </div>
+
+    </nav>
+	<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">{% if company %}{{company.company_name|title}}{% else %}Anonymous
+			{% endif %}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+	{% if user.is_authenticated %}
+	 <div class="container">
+    <div class="row">
+      <div class="col-md-6 intros">Hello,{{user.username||title}}</div>
+      <div class="col-md-6 intros"><a href="{% url 'logout' %}" class="link-offset-2 link-underline link-underline-opacity-0">Logout</a> <a href="{% url 'password_change' %}" class="link-offset-2 link-underline link-underline-opacity-0">Change Password</a> </div>
+    </div>
+
+  </div>
+  {% else %}
+<a href="{% url 'login' %}" class="link-offset-2 link-underline link-underline-opacity-0">Log In</a><a href="{% url 'password_reset' %}" class="link-offset-2 link-underline link-underline-opacity-0">Forgot Password</a>
+{% endif %}
+  </div>
+</div>
+
+  
